@@ -41,8 +41,8 @@ if (isset($_POST['save_btn'])) {
  $txt .= "echo.\n";
  $txt .= "ping %machineip% -n 2\n";
  $txt .= "tracert %machineip%\n";
- $txt .= '"C:\Program Files\uvnc bvba\UltraVNC\vncviewer.exe" -connect %machineip%:15900 /password %password%\n';
- $txt .= "pause\n";
+ $txt .= '"C:\Program Files\uvnc bvba\UltraVNC\vncviewer.exe" -connect %machineip%:15900 /password %password%';
+ $txt .= "\npause\n";
     fwrite($myfile, $txt);
     fclose($myfile);
         $ins=$conn->query("INSERT INTO data_list(ipaddress_name,ipaddress_addr,xml_file,file_name,create_at) VALUES('$ipaddress_name','$ipaddress_addr','$time','$file_name','$create_at')");
